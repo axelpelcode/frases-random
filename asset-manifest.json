@@ -8,7 +8,7 @@
     "main.29255ef2.js.map": "/frases-random/build/static/js/main.29255ef2.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0487abb.css",
-    "static/js/main.29255ef2.js"
+    "/frases-random/build/static/css/main.a0487abb.css",
+    "/frases-random/build/static/js/main.29255ef2.js"
   ]
 }
