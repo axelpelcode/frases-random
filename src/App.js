@@ -4,20 +4,28 @@ import './App.css';
 import Boton from './componentes/Boton';
 import FraseDisplay from './componentes/FraseDisplay';
 import Frases from './Objeto/Frases';
-import logo from './img/frp-logo.png'
+import Colores from './Objeto/Colores';
+import logo from './img/frp-logo.png';
 
 function App() {
 
   const [num, setNum] = useState(0);
 
+  const [numColor, setColor] = useState(0);
+
   const Randomer = (max) => Math.floor(Math.random() * max);
 
   const clickSiguienteFrase = () => {
    setNum(
-    (num * 0) + Randomer(26)
-    )
+    (num * 0) + Randomer((Object.keys(Frases).length)
+   ));
     console.log(num);
-  }
+
+   setColor(
+    (numColor * 0) + Randomer((Object.keys(Colores).length)
+    ));
+    console.log(numColor);
+  };
 
   const clickTwittear = () => {
    console.log("Twittear frase");
@@ -32,16 +40,16 @@ function App() {
           <img 
             className="img-responsive col-md-1"
             src={logo} 
-            title="Frases random para twittear"
-            alt="Preciona 'Nueva frase' para generar una frase aleatoria
+            title="Fraces random para twittear"
+            alt="Preciona 'Nueva frace' para generar una frase aleatoria
              o 'Twittear' para publicalra."
           />
-          <h1 className="text-primary text-center col-md-4">Frases random</h1>
+          <h1 className="text-primary text-center col-md-4">Fraces de Axel</h1>
           <img 
             className="img-responsive col-md-1"
             src={logo} 
-            title="Frases random para twittear"
-            alt="Preciona 'Nueva frase' para generar una frase aleatoria
+            title="Fraces random para twittear"
+            alt="Preciona 'Nueva frace' para generar una frase aleatoria
              o 'Twittear' para publicalra."
           />
           <div className="col-md-3" />
@@ -50,7 +58,7 @@ function App() {
           <div id="quote-box" className="col-md-8" >
             < FraseDisplay 
               fraseSelect={Frases[num]}
-            /> 
+              style={{ color: Colores[numColor] }}/> 
           <div className="row">
             <div className="col-md-4" />
             <div className="col-md-2">
@@ -58,7 +66,7 @@ function App() {
               claseBoton="btn btn-block btn-primary"
               idBoton="new-quote"
               nombreBoton="Nueva frase" 
-              clickEfecto={clickSiguienteFrase} 
+              clickEfecto={clickSiguienteFrase}
             />
             </div>
             <div className="col-md-2">

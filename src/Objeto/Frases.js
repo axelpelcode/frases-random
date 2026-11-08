@@ -52,7 +52,9 @@ const Frases = {
     
     24: ["El sabio no dice nunca todo lo que piensa, pero siempre piensa todo lo que dice", "Aristóteles"],
     
-    25: ["No hay que ir para atrás ni para darse impulso", "Lao Tsé"]
+    25: ["No hay que ir para atrás ni para darse impulso", "Lao Tsé"],
+
+    26: ["Dale play y sigue avanzando.", "Snake Axel"]
     
     };
 
