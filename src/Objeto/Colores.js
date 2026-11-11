@@ -1,12 +1,12 @@
 // Objeto de colores
 
 const Colores = {
-    0:["blue"],
-    1:["grey"],
-    2:["green"],
-    3:["cian"],
-    4:["yellow"],
-    5:["red"]
+    0:["#F54927"],
+    1:["#5a5a5a"],
+    2:["#316e31"],
+    3:["#035757"],
+    4:["#636317"],
+    5:["#aa3232"]
 };
 
 export default Colores; 
