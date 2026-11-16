@@ -15,14 +15,17 @@ function App() {
 
   const [contador, setContador] = useState(1);
 
+  const [numAnterior, setNumAnterior] = useState(0);
+
   const Randomer = (max) => Math.floor(Math.random() * max);
 // Obtiene el número total de frases y colores
   const totalFrases = Object.keys(Frases).length;
 
   const totalColores = Object.keys(Colores).length;
+
 // Función para cambiar la frase y el color
   const clickSiguienteFrase = () => {
-    // FRACE
+    // FRASE
     let nuevoNumero;
 
     do {
@@ -34,7 +37,8 @@ function App() {
     console.log(
         "Frase anterior:", num,
         "Nueva frase:", nuevoNumero);
-
+    // guarda FRASE anterior
+    setNumAnterior(num);
     // COLOR
     let nuevoNumeroColor;
 
@@ -48,10 +52,16 @@ function App() {
         "Color anterior:", numColor,
         "Nuevo color:", nuevoNumeroColor 
     );
+
     // Contador de frases
     setContador(contador + 1);
     console.log("Frases mostradas:", contador);
   };
+  // Funcion para ver frase anterior
+    const clickFraseAnterior = () => {
+        setNum(numAnterior);
+        console.log("Frase anterior:", numAnterior);
+    };
   //Twittear ( Recordar cambiar por X )
   const clickTwittear = () => {
    console.log("Twittear frase");
@@ -80,7 +90,7 @@ function App() {
           />
           <div className="col-md-3" />
 
-          <div className="col-md-2" />  
+          <div className="col-md-3" />  
           <div id="quote-box" className="col-md-8" >
             < FraseDisplay 
               fraseSelect={Frases[num]}
@@ -95,28 +105,37 @@ function App() {
               clickEfecto={clickSiguienteFrase}
             />
             </div>
-            <div className="col-md-2">
+            <div className="col-md-3">
             <Boton 
-              claseBoton="btn btn-block btn-info"
+              claseBoton="btn btn-block btn-x"
               idBoton="tweet"
+              style={{ color: Colores[6] }}
               nombreBoton= {<a 
                 id="tweet-quote"
                 href={`http://twitter.com/intent/tweet?text="${Frases[num][0]}" - ${Frases[num][1]}`} 
                 target="_blank"
                 rel="noreferrer"
                 >
-                Twittear <i className="fab fa-twitter" />
+                Compartir en <b>X</b> {/* simbolo tweeter viejo <i className="fab fa-twitter" /> */}
                 </a>} 
               clickEfecto={clickTwittear} 
             />
             </div>
+          <div className="col-md-3" >
+          <Boton
+            claseBoton="btn btn-block btn-primary"
+            idBoton="previous-quote"
+            nombreBoton="Frase anterior"
+            clickEfecto={clickFraseAnterior}
+          />
+          </div>
             <div className="col-md-4"/>
                 <p id="contador">Frases vistas: {contador}</p>
             </div>
           </div>
           <div className="col-md-2" />
-
-        </div>      
+          </div>
+      
         <div className="text-center col-md-12">
           <footer >
             <a id="contacto" href="https://github.com/axelpelcode" target="_blank" rel="noreferrer">

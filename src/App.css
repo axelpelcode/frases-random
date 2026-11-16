@@ -28,3 +28,21 @@ h1, p{
 #contador{
   color:rgb(147, 134, 247);
 }
+.btn-x{
+    background-color:black;
+    border:1px solid black;
+    color:white;
+}
+
+.btn-x:hover{
+    background-color:#222;
+    border:1px solid #222;
+    color:white;
+}
+#previous-quote-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  background-color: #3d9191;
+}
